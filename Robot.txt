@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /index.html
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /main.b3331d.js
+Disallow: /mobile.8d90af.js
+Disallow: /slider.445162.js
+Disallow: /main.b3331d.css
+Disallow: /404
