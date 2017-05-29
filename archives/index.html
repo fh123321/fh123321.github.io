@@ -27,7 +27,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: #a0cfe4;
     }
   </style>
   
@@ -48,7 +48,7 @@
 
 <body>
   <div id="container" q-class="show:isCtnShow">
-    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <canvas style="display:none" id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
 <div class="overlay" style=" background-attachment: fixed;background-image: url('/img/theme_head.jpg');"></div>
@@ -90,6 +90,11 @@
     			
             
 		</nav>
+		<a>熱血社群</a>
+		<div id="left-link">
+			<a  href="http://study4.tw/" target="_blank"><img src="https://az787680.vo.msecnd.net/user/08alan/2df5f8ce-da1a-48b1-8b75-480110479b75/1484729653_75048.png"></a>
+			<a href="http://mvc.tw" target="_blank"><img alt="樂在 Coding 愛上 MVC - twMVC" src="https://lh4.googleusercontent.com/-xxKgt1Du7iA/T75VMpjndyI/AAAAAAAAABI/byroz54WLlY/s800/twMVC-180_100.png"></a>
+		</div>
 		<nav class="header-nav">
 			<div class="social">
 				
@@ -101,7 +106,16 @@
 		</nav>
 	</header>		
 </div>
-
+<style>
+	#left-link >a >img{
+			box-shadow:2px 2px rgba(128,128,128,0.6);
+			width: 170px;
+			height: 70px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			border: 1px solid black;
+	}
+</style>
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
