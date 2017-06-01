@@ -263,9 +263,7 @@
 </tbody>
 </table>
 <p>比較值得注意的是，在 C# 裡面時間格式的字母是<strong>有大小寫區分</strong>的，所以在轉時間時要非常小心<br>(本人開發時曾因大寫 MM 與 小寫 mm 打反付出慘痛經驗)</p>
-<h3 id="2-有三個時常拿來做預設參數的東西"><a href="#2-有三個時常拿來做預設參數的東西" class="headerlink" title="2. 有三個時常拿來做預設參數的東西"></a>2. 有三個時常拿來做預設參數的東西</h3><font size="4"> - sysdate </font>
-
-<p><font size="4"> - sysdate </font><br>&emsp;&emsp;sysdate 主要會用在一般 SQL 的語句中，例如:</p>
+<h3 id="2-有三個時常拿來做預設參數的東西"><a href="#2-有三個時常拿來做預設參數的東西" class="headerlink" title="2. 有三個時常拿來做預設參數的東西"></a>2. 有三個時常拿來做預設參數的東西</h3><p><font size="4"> - sysdate </font><br>&emsp;&emsp;sysdate 主要會用在一般 SQL 的語句中，例如:</p>
 <pre><code>SELECT sysdate FROM dual
 </code></pre><p>或</p>
 <pre><code>SELECT TO_CHAR(sysdate, &apos;YYYY/MM/DD&apos;) FROM dual
