@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://qpoome.github.io/2017/05/29/oracle常用指令/index.html">
 <meta property="og:site_name" content="Dreaming">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫可以給我玩也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情 1. 時間格式永遠傻傻分不清楚在使用 Oracle 下 SQL 指令時通常我們要把一">
-<meta property="og:updated_time" content="2017-06-01T15:52:48.181Z">
+<meta property="og:updated_time" content="2017-06-08T13:58:16.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle常用指令與問題紀錄">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫可以給我玩也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情 1. 時間格式永遠傻傻分不清楚在使用 Oracle 下 SQL 指令時通常我們要把一">
@@ -269,6 +269,7 @@
 <pre><code>SELECT TO_CHAR(sysdate, &apos;YYYY/MM/DD&apos;) FROM dual
 </code></pre><p>&emsp;&emsp;但是他也可以拿來放在類似最後 修改時間 (ModifiedDate) 這個樣子的欄位，這樣不管你之後新增 (Insert) 或是修改 (Update) 時他就會幫我們在 修改時間 欄位上自動帶出系統時間瞜</p>
 <p>未完待續…</p>
+<p>本文章參考至:<br><a href="https://dotblogs.com.tw/skyline0217/2011/01/26/21047" target="_blank" rel="external">skyline0217</a>、<a href="http://mark528.pixnet.net/blog/post/7267486" target="_blank" rel="external">狐的窩</a>、<a href="https://www.techonthenet.com/oracle/functions/to_date.php" target="_blank" rel="external">techonthenet</a></p>
 
       
 
@@ -355,6 +356,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/06/08/淺談程式設計師的心情/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          淺談程式設計師的心情
+        
+      </div>
+    </a>
   
   
     <a href="/2017/05/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
