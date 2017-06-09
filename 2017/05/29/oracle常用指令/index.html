@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://qpoome.github.io">
   <title>Oracle常用指令與問題紀錄 | Dreaming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫可以學習，也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情 1. 時間格式永遠傻傻分不清楚在使用 Oracle 下 SQL 指令時通常我們要把一">
+  <meta name="description" content="&amp;emsp;&amp;emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫要做使用，也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情 1. 時間格式永遠傻傻分不清楚在使用 Oracle 下 SQL 指令時通常我們要把一">
 <meta name="keywords" content="SQL,Oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle常用指令與問題紀錄">
 <meta property="og:url" content="http://qpoome.github.io/2017/05/29/oracle常用指令/index.html">
 <meta property="og:site_name" content="Dreaming">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫可以學習，也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情 1. 時間格式永遠傻傻分不清楚在使用 Oracle 下 SQL 指令時通常我們要把一">
-<meta property="og:updated_time" content="2017-06-09T05:00:53.579Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫要做使用，也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情 1. 時間格式永遠傻傻分不清楚在使用 Oracle 下 SQL 指令時通常我們要把一">
+<meta property="og:updated_time" content="2017-06-09T05:02:28.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle常用指令與問題紀錄">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫可以學習，也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情 1. 時間格式永遠傻傻分不清楚在使用 Oracle 下 SQL 指令時通常我們要把一">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫要做使用，也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情 1. 時間格式永遠傻傻分不清楚在使用 Oracle 下 SQL 指令時通常我們要把一">
   
     <link rel="alternative" href="/atom.xml" title="Dreaming" type="application/atom+xml">
   
@@ -217,7 +217,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&emsp;&emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫可以學習，也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情</p>
+        <p>&emsp;&emsp;在寫 C# 時似乎許多人主要都是以使用 SqlServer 為主，但很幸運的在我的公司裡面有 SqlServer 、 Oracle 與 Informix 三種資料庫要做使用，也因為如此時常會有一些語法常常混在一起使用或忘記的狀況，所以今天就要來記錄一下在使用 Oracle 時常會遇到的事情</p>
 <h3 id="1-時間格式永遠傻傻分不清楚"><a href="#1-時間格式永遠傻傻分不清楚" class="headerlink" title="1. 時間格式永遠傻傻分不清楚"></a>1. 時間格式永遠傻傻分不清楚</h3><p>在使用 Oracle 下 SQL 指令時通常我們要把一串字轉乘時間時會用到 <strong>to_date ( 時間,時間格式 )</strong> 的用法</p>
 <p>後面的時間格式 <strong>‘yyyy/mm/dd hh24:mi:ss’</strong><br>永遠跟C# DateTime ToString() 的格式 <strong>“yyyy/MM/dd HH:mm:ss”</strong> 傻傻分不清</p>
 <p>這裡就來做個基本的比較表 (這邊只列出一些較常用到的)</p>
@@ -488,6 +488,12 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
                         <ul class="article-tag-list" q-show="showTags">
                             
                                 <li class="article-tag-list-item">
+                                    <a href="javascript:void(0)" class="js-tag color3">
+                                        隨筆
+                                    </a>
+                                </li>
+                                
+                                <li class="article-tag-list-item">
                                     <a href="javascript:void(0)" class="js-tag color4">
                                         SQL
                                     </a>
@@ -496,12 +502,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
                                 <li class="article-tag-list-item">
                                     <a href="javascript:void(0)" class="js-tag color2">
                                         Oracle
-                                    </a>
-                                </li>
-                                
-                                <li class="article-tag-list-item">
-                                    <a href="javascript:void(0)" class="js-tag color3">
-                                        隨筆
                                     </a>
                                 </li>
                                 
