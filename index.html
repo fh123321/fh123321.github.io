@@ -413,7 +413,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/28/hello-world/">Hello World</a>
+      <a class="article-title" href="/2017/05/28/hello-world/">被改寫的Hello World</a>
     </h1>
   
 
@@ -426,7 +426,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <p>這是一篇關於如何使用 hexo 架設自己的部落格的文章，<br>首先你要先到 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 官網他會有詳細和中文的教學</p>
+<h3 id="Step-1-安裝-node-js"><a href="#Step-1-安裝-node-js" class="headerlink" title="Step 1: 安裝 node js"></a>Step 1: 安裝 <a href="https://zh.wikipedia.org/wiki/Node.js" target="_blank" rel="external">node js</a></h3><p>由於 hexo 在文章部屬前可以先使用 node js 先跑在自己本機端上</p>
+<p>而且部屬也是使用 node js 將 mark down 語法轉成 html 頁面</p>
+<p>因此在安裝 hexo 前得先安裝 node js (<a href="https://nodejs.org/en/" target="_blank" rel="external">連結</a>)</p>
+<h3 id="Step-2-安裝程式編輯器-使用VS-Code"><a href="#Step-2-安裝程式編輯器-使用VS-Code" class="headerlink" title="Step 2: 安裝程式編輯器 (使用VS Code)"></a>Step 2: 安裝程式編輯器 <a href="https://code.visualstudio.com/" target="_blank" rel="external">(使用VS Code)</a></h3><p>vs code 是微軟所開發的程式編輯器，它輕巧快速而且免費提供給大家做使用</p>
+<p>而且你需要什麼工具就安裝什麼</p>
+<p>是個跟sublime 、 nodepad ++ 一樣的好東西</p>
+<h3 id="Step-3-安裝GIT"><a href="#Step-3-安裝GIT" class="headerlink" title="Step 3: 安裝GIT"></a>Step 3: 安裝GIT</h3><p>下載網址:<a href="http://git-scm.com/download/" target="_blank" rel="external">http://git-scm.com/download/</a></p>
+<h3 id="Step-4-使用-npm-安裝-hexo"><a href="#Step-4-使用-npm-安裝-hexo" class="headerlink" title="Step 4: 使用 npm 安裝 hexo"></a>Step 4: 使用 npm 安裝 hexo</h3><p>打開cmd並打上</p>
+<pre><code>npm install hexo-cli -g  //安裝hexo cli
+</code></pre><h3 id="Step-5-創建部落格資料夾並使用-vs-code-打開"><a href="#Step-5-創建部落格資料夾並使用-vs-code-打開" class="headerlink" title="Step 5: 創建部落格資料夾並使用 vs code 打開"></a>Step 5: 創建部落格資料夾並使用 vs code 打開</h3><p>接著在打上</p>
+<pre><code>cd Document/    //移至Document底下
+mkdir blog      //創造一個叫blog的資料夾
+hexo init blog  //新增想關資料到blog
+cd blog/        //進入blog資料夾
+npm install     //安裝
+code .          //使用vs code 打開資料夾底下的東西
+hexo s          //使用本地端node js 跑 blog
+</code></pre><p>你打開 127.0.0.1:4000 就會看到</p>
+<p><img src="http://img.blog.csdn.net/20140305204456109?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcGxlYXNlY2FsbG1ld2h5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Hexo 預設畫面" title="預設畫面"></p>
+<h3 id="Step-6-Hexo-資料夾講解"><a href="#Step-6-Hexo-資料夾講解" class="headerlink" title="Step 6: Hexo 資料夾講解"></a>Step 6: Hexo 資料夾講解</h3><p>.deploy_git :底下是你文章 (markdown) 經過 hexo 解析後所長出來的html程式碼<br>Source :底下放著你所有的文章<br>themes :底下放著你想要引用的畫面<br>_config.yml : 裡面存放著各種設定</p>
+<p><img src="https://photos-6.dropbox.com/t/2/AAAjh7p4zmkK3nCcoEjijd5CdBv_0rSt7n7dtAxF4jpw-g/12/677805917/png/32x32/1/_/1/2/HexoManu.png/EP_inMYFGAIgAigC/RI7On_x8003eiInL-qulMvM8EE4As1KCYShhuolqE84?size=800x600&amp;size_mode=3" alt=" vs code 打開資料夾的樣子" title="預設畫面"></p>
+<h3 id="Step-7-切換主題"><a href="#Step-7-切換主題" class="headerlink" title="Step 7: 切換主題"></a>Step 7: 切換主題</h3><p>hexo 內有許多主題可以進行選擇</p>
+<p>你可以上 hexo 的 <a href="https://hexo.io/themes/" target="_blank" rel="external">主題頁面</a> 去尋找主題</p>
+<p>你選擇後需要進入 github 並且將他 clone 下來放在你的 themes 底下</p>
+<p>而我是選擇 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a> 這個主題</p>
+<p>原因是因為他好修改程式碼</p>
+<p>將主題放到 themes 資料夾後</p>
+<p>修改 _config.yml 內的 theme 設定  把冒號後面改 yilia 就可以摟</p>
+<h3 id="Step-8-新增文章"><a href="#Step-8-新增文章" class="headerlink" title="Step 8 : 新增文章"></a>Step 8 : 新增文章</h3><p>要新增文章只要在 cmd 內打上</p>
+<pre><code>//hexo new &quot;文章名稱&quot;
+hexo new &quot;我的第一篇文章&quot;
+</code></pre><p>他就會幫你在source 底下的 _posts markdown 語法的文章喔</p>
+<h3 id="Step-9-Markdown-語法學習"><a href="#Step-9-Markdown-語法學習" class="headerlink" title="Step 9 : Markdown 語法學習"></a>Step 9 : Markdown 語法學習</h3><p>這個就不多解釋搂((老實說我也是 markdoen 新手，不過上手難度不高就是了</p>
+<p>可以參考 <a href="https://wastemobile.gitbooks.io/gitbook-chinese/content/format/markdown.html" target="_blank" rel="external">教學網站 GitBook</a></p>
+<p>部分文章參考至:<a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">令狐葱的前端筆記</a></p>
+<p>下方是原文他放了些基本語法——————————————————————————-<br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
