@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qpoome.github.io">
-  <title>Dreaming</title>
+  <title>SongSong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="夢中的隨手筆記543">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dreaming">
+<meta property="og:title" content="SongSong">
 <meta property="og:url" content="http://qpoome.github.io/index.html">
-<meta property="og:site_name" content="Dreaming">
+<meta property="og:site_name" content="SongSong">
 <meta property="og:description" content="夢中的隨手筆記543">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dreaming">
+<meta name="twitter:title" content="SongSong">
 <meta name="twitter:description" content="夢中的隨手筆記543">
   
-    <link rel="alternative" href="/atom.xml" title="Dreaming" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="SongSong" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -68,7 +68,7 @@
             </hgroup>
             
                 <p class="header-subtitle">
-                    Coding夢遊仙境
+                    SongSong DreamCode
                 </p>
                 
 
@@ -160,7 +160,7 @@
 			  <h1 class="header-author js-header-author">SongSong</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Coding夢遊仙境<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>SongSong DreamCode<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -216,6 +216,145 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="pythoncrawler-簡易爬蟲使用Python" class="article article-type-pythoncrawler  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/23/簡易爬蟲使用Python/">簡易爬蟲使用Python</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/23/簡易爬蟲使用Python/" class="archive-article-date">
+  	<time datetime="2017-07-23T03:05:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;最近在幫忙改寫爬蟲程式到Python,剛好有使用到 (BeautifulSoup) 這個還不錯的套件，他可以輕易的讓你找到爬下來的HTML節點與內容，進而尋找到你想爬的資料，真是非常的方便阿，所以就來做個紀錄搂</p>
+<h3 id="Step-1-安裝-Python-3"><a href="#Step-1-安裝-Python-3" class="headerlink" title="Step 1: 安裝 Python 3"></a>Step 1: 安裝 Python 3</h3><p>&emsp;&emsp;windows 可以到 <a href="https://www.python.org/" target="_blank" rel="external">python</a> 官網可以下載exe檔案進行安裝，ubontu 可以在指令視窗使用 apt-get 進行安裝</p>
+<pre><code>sudo apt-get install python3
+sudo apt-get install pip3
+</code></pre><h3 id="Step-2-安裝BeautifulSoup4-與-Selenium"><a href="#Step-2-安裝BeautifulSoup4-與-Selenium" class="headerlink" title="Step 2: 安裝BeautifulSoup4 與 Selenium"></a>Step 2: 安裝BeautifulSoup4 與 Selenium</h3><p>&emsp;&emsp;有了python之後我們可以使用pip，來安裝beautifulsoup相關套件</p>
+<pre><code>pip install bs4
+</code></pre><p>&emsp;&emsp;Selenium是一個很好用的工具，常常被拿來模仿使用者動作來撰寫測試，這邊就借他來爬網頁搂</p>
+<pre><code>pip install selenium
+</code></pre><p>&emsp;&emsp;然後要下載 <a href="http://www.seleniumhq.org/download/" target="_blank" rel="external">driver</a> (這邊使用<a href="https://chromedriver.storage.googleapis.com/index.html?path=2.32/" target="_blank" rel="external">chrome driver</a>)，解壓縮以後可以看到一個檔案，你可以把路徑放到path或者讓他跟你的程式在同一個目錄下，這樣程式等等才抓的到喔</p>
+<h3 id="Step-3-新增一個檔案-crawler-py-並使用-Selenium-爬出相關內容"><a href="#Step-3-新增一個檔案-crawler-py-並使用-Selenium-爬出相關內容" class="headerlink" title="Step 3:新增一個檔案 crawler.py 並使用 Selenium 爬出相關內容"></a>Step 3:新增一個檔案 crawler.py 並使用 Selenium 爬出相關內容</h3><p>&emsp;&emsp;這邊我隨便找了一個html範例 (<a href="http://example.com/" target="_blank" rel="external">Example</a>) ，以下為 crawler.py 內容</p>
+<pre><code>from bs4 import BeautifulSoup
+from selenium import webdriver
+
+def start(link):
+    #先用selenium模仿web使用者動作取得網頁內容
+    #後面的executable_path為你chromedriver的路徑(相對路徑)
+    driver=webdriver.Chrome(executable_path=&quot;./chromedriver&quot;)
+    driver.get(link)
+    print(driver.page_source)
+
+url =&apos;http://example.com/&apos;
+start(url)
+</code></pre><p>&emsp;&emsp;寫好後在小黑視窗打上</p>
+<pre><code>python crawler.py
+//或者
+python3 crawler.py
+</code></pre><p>&emsp;&emsp;你就會看到抓下來的html</p>
+<p><img src="http://res.cloudinary.com/dnmdcssyc/image/upload/c_scale,w_680/v1505132841/screem2017091101_cmmdqv.png" alt=" 抓下來的html" title="預設畫面"></p>
+<h3 id="Step-4-使用-BeautifulSoup4-解析-Html-內容"><a href="#Step-4-使用-BeautifulSoup4-解析-Html-內容" class="headerlink" title="Step 4:使用 BeautifulSoup4 解析 Html 內容"></a>Step 4:使用 BeautifulSoup4 解析 Html 內容</h3><p>&emsp;&emsp;首先我們在程式裡面寫個小小方法叫 innerHtml 來做轉換節點為文字的動作</p>
+<pre><code>def innerHTML(element):
+    return element.decode_contents(formatter=&quot;html&quot;)
+</code></pre><p>&emsp;&emsp;然後要將我們剛剛抓下來的東西餵進 BeautifulSoup 內並用一個變數做儲存</p>
+<pre><code>testsoup = BeautifulSoup(driver.page_source, &quot;html.parser&quot;)
+</code></pre><p>&emsp;&emsp;假設我們現在想找所有 Html 的 </p><p> 標籤裡面的東西並把他印出來，這時我們只要這樣寫就可以把所有的 p 節點內容印出來瞜</p>
+<pre><code>for nodep in testsoup.find_all(&apos;p&apos;) :
+    print(innerHTML(nodep))
+</code></pre><p>&emsp;&emsp;我們也可以把找到的內容用變數存起來</p>
+<pre><code>pArrNodes = testsoup.find_all(&apos;p&apos;)
+print(pArrNodes[0])
+</code></pre><p>&emsp;&emsp;如果找不到回傳的結果會是 none 所以我們可以用這個來做 if 的判斷</p>
+<pre><code>if testsoup.find_all(&apos;p&apos;) is not None :
+    for nodep in testsoup.find_all(&apos;p&apos;) :
+        print(innerHTML(nodep))
+</code></pre><p>&emsp;&emsp;如果我們想要取得某個 p 標籤內 class 名稱叫做 ‘test’</p>
+<pre><code>testsoup.find_all(&apos;p&apos;,{&apos;class&apos;:&apos;test&apos;})
+#當然我們也可以用相同方法過濾其他的
+testsoup.find_all(&apos;p&apos;,{&apos;id&apos;:&apos;test&apos;})
+</code></pre><p>&emsp;&emsp;而且在裡面也可以使用 lembda </p>
+<pre><code>#這句是撈所有 p 標籤內有 class 的標籤
+testsoup.find(lambda tag: tag.name == &apos;p&apos; and &apos;class&apos; in tag.attrs )
+</code></pre><p>&emsp;&emsp;最後我們來簡單的抓出所有p標籤底下的 a 標籤然後把它印出來吧(範例程式碼)</p>
+<pre><code>from bs4 import BeautifulSoup
+from selenium import webdriver
+
+
+def innerHTML(element):
+    return element.decode_contents(formatter=&quot;html&quot;)
+def start(link):
+    #先用selenium模仿web使用者動作取得網頁內容
+    #後面的executable_path為你chromedriver的路徑(相對路徑)
+    driver=webdriver.Chrome(executable_path=&quot;./chromedriver&quot;)
+    driver.get(link)
+    testsoup = BeautifulSoup(driver.page_source, &quot;html.parser&quot;)
+    #找出所有p底下的所有a
+    pArr =testsoup.find_all(&apos;p&apos;)
+    for nodep in pArr:
+        aArr =nodep.find_all(&apos;a&apos;)
+        if aArr is not None:
+            for nodea in aArr :
+                print(innerHTML(nodea))
+    #印出網頁內容
+    #print(driver.page_source)
+
+url =&apos;http://example.com/&apos;
+start(url)
+</code></pre><h2 id="結尾"><a href="#結尾" class="headerlink" title="結尾"></a>結尾</h2><p>&emsp;&emsp;這邊小小紀錄了一下 BeautifulSoup 簡單的使用方法更詳細的可以參考下面的連結有更多教學喔，他可以很簡單的取出你想要的內容，快速塞選出你想要的節點進行資料，真是相當的方便阿，不過在爬網頁時還是要注意一下資料的合法性喔。</p>
+<h2 id="參考文獻"><a href="#參考文獻" class="headerlink" title="參考文獻"></a>參考文獻</h2><p>crummy :<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="external">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">crawler</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/23/簡易爬蟲使用Python/">觀看全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -428,6 +567,18 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           </label>
                         <ul class="article-tag-list" q-show="showTags">
                             
+                                <li class="article-tag-list-item">
+                                    <a href="javascript:void(0)" class="js-tag color2">
+                                        Python
+                                    </a>
+                                </li>
+                                
+                                <li class="article-tag-list-item">
+                                    <a href="javascript:void(0)" class="js-tag color3">
+                                        crawler
+                                    </a>
+                                </li>
+                                
                                 <li class="article-tag-list-item">
                                     <a href="javascript:void(0)" class="js-tag color2">
                                         NodeJS
