@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qpoome.github.io">
-  <title>Archives: 2017/5 | SongSong</title>
+  <title>簡易爬蟲筆記使用Python | SongSong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="夢中的隨手筆記543">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SongSong">
-<meta property="og:url" content="http://qpoome.github.io/archives/2017/05/index.html">
+  <meta name="description" content="前言&amp;emsp;&amp;emsp;最近在幫忙改寫爬蟲程式到Python,剛好有使用到 (BeautifulSoup) 這個還不錯的套件，他可以輕易的讓你找到爬下來的HTML節點與內容，進而尋找到你想爬的資料，真是非常的方便阿，所以就來做個紀錄搂 Step 1: 安裝 Python 3&amp;emsp;&amp;emsp;windows 可以到 python 官網可以下載exe檔案進行安裝，ubontu 可以在指令視窗">
+<meta name="keywords" content="Python,crawler">
+<meta property="og:type" content="article">
+<meta property="og:title" content="簡易爬蟲筆記使用Python">
+<meta property="og:url" content="http://qpoome.github.io/2017/07/23/簡易爬蟲筆記使用Python/index.html">
 <meta property="og:site_name" content="SongSong">
-<meta property="og:description" content="夢中的隨手筆記543">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;最近在幫忙改寫爬蟲程式到Python,剛好有使用到 (BeautifulSoup) 這個還不錯的套件，他可以輕易的讓你找到爬下來的HTML節點與內容，進而尋找到你想爬的資料，真是非常的方便阿，所以就來做個紀錄搂 Step 1: 安裝 Python 3&amp;emsp;&amp;emsp;windows 可以到 python 官網可以下載exe檔案進行安裝，ubontu 可以在指令視窗">
+<meta property="og:image" content="http://res.cloudinary.com/dnmdcssyc/image/upload/c_scale,w_680/v1505132841/screem2017091101_cmmdqv.png">
+<meta property="og:updated_time" content="2018-01-02T02:12:25.466Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SongSong">
-<meta name="twitter:description" content="夢中的隨手筆記543">
+<meta name="twitter:title" content="簡易爬蟲筆記使用Python">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;最近在幫忙改寫爬蟲程式到Python,剛好有使用到 (BeautifulSoup) 這個還不錯的套件，他可以輕易的讓你找到爬下來的HTML節點與內容，進而尋找到你想爬的資料，真是非常的方便阿，所以就來做個紀錄搂 Step 1: 安裝 Python 3&amp;emsp;&amp;emsp;windows 可以到 python 官網可以下載exe檔案進行安裝，ubontu 可以在指令視窗">
+<meta name="twitter:image" content="http://res.cloudinary.com/dnmdcssyc/image/upload/c_scale,w_680/v1505132841/screem2017091101_cmmdqv.png">
   
     <link rel="alternative" href="/atom.xml" title="SongSong" type="application/atom+xml">
   
@@ -185,64 +189,218 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="pythoncrawler-簡易爬蟲筆記使用Python" class="article article-type-pythoncrawler " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/28/hello-world/" class="archive-article-date">
-  	<time datetime="2017-05-28T08:45:58.342Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/28/hello-world/">被改寫的Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      簡易爬蟲筆記使用Python
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/23/簡易爬蟲筆記使用Python/" class="archive-article-date">
+  	<time datetime="2017-07-23T03:05:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;最近在幫忙改寫爬蟲程式到Python,剛好有使用到 (BeautifulSoup) 這個還不錯的套件，他可以輕易的讓你找到爬下來的HTML節點與內容，進而尋找到你想爬的資料，真是非常的方便阿，所以就來做個紀錄搂</p>
+<h3 id="Step-1-安裝-Python-3"><a href="#Step-1-安裝-Python-3" class="headerlink" title="Step 1: 安裝 Python 3"></a>Step 1: 安裝 Python 3</h3><p>&emsp;&emsp;windows 可以到 <a href="https://www.python.org/" target="_blank" rel="external">python</a> 官網可以下載exe檔案進行安裝，ubontu 可以在指令視窗使用 apt-get 進行安裝</p>
+<pre><code>sudo apt-get install python3
+sudo apt-get install pip3
+</code></pre><h3 id="Step-2-安裝BeautifulSoup4-與-Selenium"><a href="#Step-2-安裝BeautifulSoup4-與-Selenium" class="headerlink" title="Step 2: 安裝BeautifulSoup4 與 Selenium"></a>Step 2: 安裝BeautifulSoup4 與 Selenium</h3><p>&emsp;&emsp;有了python之後我們可以使用pip，來安裝beautifulsoup相關套件</p>
+<pre><code>pip install bs4
+</code></pre><p>&emsp;&emsp;Selenium是一個很好用的工具，常常被拿來模仿使用者動作來撰寫測試，這邊就借他來爬網頁搂</p>
+<pre><code>pip install selenium
+</code></pre><p>&emsp;&emsp;然後要下載 <a href="http://www.seleniumhq.org/download/" target="_blank" rel="external">driver</a> (這邊使用<a href="https://chromedriver.storage.googleapis.com/index.html?path=2.32/" target="_blank" rel="external">chrome driver</a>)，解壓縮以後可以看到一個檔案，你可以把路徑放到path或者讓他跟你的程式在同一個目錄下，這樣程式等等才抓的到喔</p>
+<h3 id="Step-3-新增一個檔案-crawler-py-並使用-Selenium-爬出相關內容"><a href="#Step-3-新增一個檔案-crawler-py-並使用-Selenium-爬出相關內容" class="headerlink" title="Step 3:新增一個檔案 crawler.py 並使用 Selenium 爬出相關內容"></a>Step 3:新增一個檔案 crawler.py 並使用 Selenium 爬出相關內容</h3><p>&emsp;&emsp;這邊我隨便找了一個html範例 (<a href="http://example.com/" target="_blank" rel="external">Example</a>) ，以下為 crawler.py 內容</p>
+<pre><code>from bs4 import BeautifulSoup
+from selenium import webdriver
+
+def start(link):
+    #先用selenium模仿web使用者動作取得網頁內容
+    #後面的executable_path為你chromedriver的路徑(相對路徑)
+    driver=webdriver.Chrome(executable_path=&quot;./chromedriver&quot;)
+    driver.get(link)
+    print(driver.page_source)
+
+url =&apos;http://example.com/&apos;
+start(url)
+</code></pre><p>&emsp;&emsp;寫好後在小黑視窗打上</p>
+<pre><code>python crawler.py
+//或者
+python3 crawler.py
+</code></pre><p>&emsp;&emsp;你就會看到抓下來的html</p>
+<p><img src="http://res.cloudinary.com/dnmdcssyc/image/upload/c_scale,w_680/v1505132841/screem2017091101_cmmdqv.png" alt=" 抓下來的html" title="預設畫面"></p>
+<h3 id="Step-4-使用-BeautifulSoup4-解析-Html-內容"><a href="#Step-4-使用-BeautifulSoup4-解析-Html-內容" class="headerlink" title="Step 4:使用 BeautifulSoup4 解析 Html 內容"></a>Step 4:使用 BeautifulSoup4 解析 Html 內容</h3><p>&emsp;&emsp;首先我們在程式裡面寫個小小方法叫 innerHtml 來做轉換節點為文字的動作</p>
+<pre><code>def innerHTML(element):
+    return element.decode_contents(formatter=&quot;html&quot;)
+</code></pre><p>&emsp;&emsp;然後要將我們剛剛抓下來的東西餵進 BeautifulSoup 內並用一個變數做儲存</p>
+<pre><code>testsoup = BeautifulSoup(driver.page_source, &quot;html.parser&quot;)
+</code></pre><p>&emsp;&emsp;假設我們現在想找所有 Html 的 </p><p> 標籤裡面的東西並把他印出來，這時我們只要這樣寫就可以把所有的 p 節點內容印出來瞜</p>
+<pre><code>for nodep in testsoup.find_all(&apos;p&apos;) :
+    print(innerHTML(nodep))
+</code></pre><p>&emsp;&emsp;我們也可以把找到的內容用變數存起來</p>
+<pre><code>pArrNodes = testsoup.find_all(&apos;p&apos;)
+print(pArrNodes[0])
+</code></pre><p>&emsp;&emsp;如果找不到回傳的結果會是 none 所以我們可以用這個來做 if 的判斷</p>
+<pre><code>if testsoup.find_all(&apos;p&apos;) is not None :
+    for nodep in testsoup.find_all(&apos;p&apos;) :
+        print(innerHTML(nodep))
+</code></pre><p>&emsp;&emsp;如果我們想要取得某個 p 標籤內 class 名稱叫做 ‘test’</p>
+<pre><code>testsoup.find_all(&apos;p&apos;,{&apos;class&apos;:&apos;test&apos;})
+#當然我們也可以用相同方法過濾其他的
+testsoup.find_all(&apos;p&apos;,{&apos;id&apos;:&apos;test&apos;})
+</code></pre><p>&emsp;&emsp;而且在裡面也可以使用 lembda </p>
+<pre><code>#這句是撈所有 p 標籤內有 class 的標籤
+testsoup.find(lambda tag: tag.name == &apos;p&apos; and &apos;class&apos; in tag.attrs )
+</code></pre><p>&emsp;&emsp;最後我們來簡單的抓出所有p標籤底下的 a 標籤然後把它印出來吧(範例程式碼)</p>
+<pre><code>from bs4 import BeautifulSoup
+from selenium import webdriver
+
+
+def innerHTML(element):
+    return element.decode_contents(formatter=&quot;html&quot;)
+def start(link):
+    #先用selenium模仿web使用者動作取得網頁內容
+    #後面的executable_path為你chromedriver的路徑(相對路徑)
+    driver=webdriver.Chrome(executable_path=&quot;./chromedriver&quot;)
+    driver.get(link)
+    testsoup = BeautifulSoup(driver.page_source, &quot;html.parser&quot;)
+    #找出所有p底下的所有a
+    pArr =testsoup.find_all(&apos;p&apos;)
+    for nodep in pArr:
+        aArr =nodep.find_all(&apos;a&apos;)
+        if aArr is not None:
+            for nodea in aArr :
+                print(innerHTML(nodea))
+    #印出網頁內容
+    #print(driver.page_source)
+
+url =&apos;http://example.com/&apos;
+start(url)
+</code></pre><h2 id="結尾"><a href="#結尾" class="headerlink" title="結尾"></a>結尾</h2><p>&emsp;&emsp;這邊小小紀錄了一下 BeautifulSoup 簡單的使用方法更詳細的可以參考下面的連結有更多教學喔，他可以很簡單的取出你想要的內容，快速塞選出你想要的節點進行資料，真是相當的方便阿，不過在爬網頁時還是要注意一下資料的合法性喔。</p>
+<h2 id="參考文獻"><a href="#參考文獻" class="headerlink" title="參考文獻"></a>參考文獻</h2><p>crummy :<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="external">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">crawler</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qpoome.github.io/2017/07/23/簡易爬蟲筆記使用Python/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/09/27/Win 10 Iot core 學習筆記使用 PI_3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Win 10 Iot core 學習筆記使用 PI_3
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/05/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">被改寫的Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -265,8 +423,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
